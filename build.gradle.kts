@@ -1,15 +1,42 @@
+java.sourceCompatibility = JavaVersion.VERSION_24
+
 plugins {
+    application
     kotlin("jvm") version "2.2.21"
 }
 
-sourceSets {
-    main {
-        kotlin.srcDir("src")
+val kotlinVersion = "2.2.21"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
+tasks {
+    wrapper {
+        gradleVersion = "8.14"
+    }
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events("passed", "skipped", "failed")
+        }
     }
 }
 
-tasks {
-    wrapper {
-        gradleVersion = "9.2.1"
-    }
+kotlin {
+    jvmToolchain(24)
+}
+
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:6.0.1")
+    testImplementation(kotlin("test"))
 }

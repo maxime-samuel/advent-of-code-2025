@@ -1,7 +1,7 @@
 rootProject.name = "advent-of-code-2025"
 
-dependencyResolutionManagement {
+pluginManagement {
     repositories {
-        mavenCentral()
+        gradlePluginPortal()
     }
 }
