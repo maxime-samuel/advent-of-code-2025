@@ -35,7 +35,7 @@ fun <T> simpleAssert(expected: T, actual: T) {
     }
 }
 
-const val debugOn = false
+const val debugOn = true
 fun logDebug(message: String) {
     if (debugOn) { println(message) }
 }

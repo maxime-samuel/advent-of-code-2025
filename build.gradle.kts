@@ -10,6 +10,7 @@ val kotlinVersion = "2.2.21"
 repositories {
     mavenLocal()
     mavenCentral()
+    gradlePluginPortal()
 }
 
 tasks.test {
